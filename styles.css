@@ -2,7 +2,8 @@
   --Orange500 : hsl(25, 97%, 53%);
   --White: hsl(0, 100%, 100%);
   --Grey500: hsl(217, 12%, 63%);
-  --Grey900: hsl(213, 19%, 18%);
+  --Grey800: rgb(47, 56, 66);
+  --Grey900: rgb(37, 45, 55);
   --Grey950: hsl(216, 12%, 8%);
 }
 
@@ -20,28 +21,36 @@ body {
   align-items: center;
   font-family: 'Overpass';
   color: white;
+  background-color: var(--Grey950);
 }
 
 .main-container {
   max-width: 400px;
-  border: 2px solid red;
-  padding: 20px;
-  background: linear-gradient(to top, var(--Grey950), var(--Grey900));
+  padding: 30px;
+  background: linear-gradient(to top, rgb(34, 42, 51) 70%, 
+  var(--Grey800));
+  border-radius: 20px;
 }
 
 .icon {
   box-sizing: content-box;
-  border: 2px solid black;
   padding: 10px;
   border-radius: 50%;
+  background-color: var(--Grey800);
 }
 
 .main-heading {
-  margin: 20px 0 10px 0;
+  margin-top: 20px;
+}
+
+.main-text {
+  margin-top: 6px;
+  font-size: 0.9rem;
+  font-weight: 300;
 }
 
 .radio-container {
-  margin: 10px 0;
+  margin: 20px 0;
   display: flex;
   justify-content: space-between;
 }
@@ -53,14 +62,12 @@ body {
   overflow: hidden;
   position: relative;
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: row;
   width: 50px;
   height: 50px;
-  border: 2px solid black;
   border-radius: 50%;
-  background-color: var(--Grey900);
+  background-color: var(--Grey800);
+  cursor: pointer;
 }
 
 .label input {
@@ -72,7 +79,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: var(--Orange500);
+  background-color: white;
   z-index: 1;
   transition: all 400ms;
 }
@@ -80,17 +87,76 @@ body {
   opacity: 1;
 }
 
+.label input:checked ~ .num {
+  color: black !important;
+}
+
+.label:hover {
+  background-color: var(--Orange500);
+}
+
 .num {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -42%);
+  position: absolute;
   z-index: 100;
 }
+
 
 .submit {
   display: block;
   margin-top: 20px;
   width: 100%;
-  padding: 8px;
+  padding: 12px;
   background-color: var(--Orange500);
   border: none;
-  border-radius: 7px;
-  color: inherit;
+  border-radius: 20px;
+  color: var(--Grey950);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
 }
+
+.submit:hover {
+  background-color: white;
+}
+
+
+/* --- STATE 2 --- */
+
+.selected-container {
+  margin: 15px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.state-2__icon-container {
+  text-align: center;
+}
+
+.selected-container div{
+  text-align: center;
+  background-color: var(--Grey800);
+  padding: 6px 20px;
+  border-radius: 50px;
+  color: hsl(25, 83%, 60%);
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+
+.state-2__heading {
+  margin: 30px 0 10px 0;
+  text-align: center;
+}
+
+.state-2__text {
+  text-align: center;
+  color: var(--Grey500);
+  font-size: 0.9rem;
+}
+
+.hidden {
+  display: none;
+}
+
