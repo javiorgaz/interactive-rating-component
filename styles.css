@@ -1,0 +1,96 @@
+:root {
+  --Orange500 : hsl(25, 97%, 53%);
+  --White: hsl(0, 100%, 100%);
+  --Grey500: hsl(217, 12%, 63%);
+  --Grey900: hsl(213, 19%, 18%);
+  --Grey950: hsl(216, 12%, 8%);
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Overpass';
+  color: white;
+}
+
+.main-container {
+  max-width: 400px;
+  border: 2px solid red;
+  padding: 20px;
+  background: linear-gradient(to top, var(--Grey950), var(--Grey900));
+}
+
+.icon {
+  box-sizing: content-box;
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.main-heading {
+  margin: 20px 0 10px 0;
+}
+
+.radio-container {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+/* --- RADIO INPUTS */
+
+.label {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: 50px;
+  height: 50px;
+  border: 2px solid black;
+  border-radius: 50%;
+  background-color: var(--Grey900);
+}
+
+.label input {
+  display: none;
+}
+
+.radio-bg {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--Orange500);
+  z-index: 1;
+  transition: all 400ms;
+}
+.label input:checked + .radio-bg {
+  opacity: 1;
+}
+
+.num {
+  z-index: 100;
+}
+
+.submit {
+  display: block;
+  margin-top: 20px;
+  width: 100%;
+  padding: 8px;
+  background-color: var(--Orange500);
+  border: none;
+  border-radius: 7px;
+  color: inherit;
+}
